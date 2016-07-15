@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/materialize.js"></script>
+</head>
+<body>
+    
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" data-activates="side-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul id="nav-menu" class="left hide-on-med-and-down">
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Experiencias</a></li>
+                <li><a href="#">Conhecimentos</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Orçamento</a></li>
+            </ul>
+            
+            <ul class="side-nav" id="side-menu">
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Experiencias</a></li>
+                <li><a href="#">Conhecimentos</a></li>
+                <li><a href="#">Contato</a></li>
+                <li><a href="#">Orçamento</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="parallax-container">
+        <div class="parallax">
+            <img src="images/cidade-noite.jpg" />
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('.parallax').parallax();
+            $(".button-collapse").sideNav();
+            parallaxResize(window.innerHeight);
+        });
+        $(window).resize(function () {
+            parallaxResize(window.innerHeight);
+        });
+
+        function parallaxResize(heigth)
+        {
+            $('.parallax-container').height(heigth - $('.nav-wrapper').height());
+        }
+    </script>
+</body>
+</html>
